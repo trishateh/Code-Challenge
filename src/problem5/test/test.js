@@ -1,10 +1,9 @@
 const { ethers } = require ("ethers");
 require('dotenv').config();
+import ABI from '../artifacts/contracts/Utility.json'
 
 const ADDR = "0xbee5a1B92Ca3A37D9EAB2c3B2Acd45a5e2200974";   // rinkeby
-const ABI = [
-  "function getBalances(address user, address[] memory tokens) public view returns (TokenBalance[] memory)",
-];    // your contract ABI
+
 
 const ADDRESS = process.env.PRIVATE_KEY; // some wallet address with token balance
 const TOKENS = [    // token contract addresses
@@ -18,7 +17,7 @@ const provider = new ethers.providers.JsonRpcProvider(
 );
 
 const test = async () => {
-	const contract = new ethers.Contract(ADDR, ABI, provider);
+	const contract = new ethers.Contract(ADDR, ABI.abi, provider);
 
   const balances = await contract.getBalances(ADDRESS, TOKENS);
 	
