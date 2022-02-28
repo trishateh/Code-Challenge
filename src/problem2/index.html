@@ -1,28 +1,83 @@
 <html>
 
 <head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fancy Form</title>
+  <link rel="stylesheet" href="style.css" />
 
   <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/1ce55c3ccc.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label>
-    <input id="input-address" />
+  <div class="container">
 
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+    <div class="content">
+      <div class="image"></div>
+    </div>
 
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" />
+  
+  <form onsubmit="return !1" id="form">
+    <div class="title">Send ETH</div>
 
-    <button>SEND TOKENS</button>
+    <div>
+      <label for="address">ETH Address</label>
+      <i class="fa-solid fa-address-card"></i>
+
+      <input 
+        id="address" 
+        type="text"
+        name="address"
+        placeholder="Enter your ETH Address" 
+      />
+
+      <i class="fas fa-exclamation-circle failure-icon"></i>
+      <i class="far fa-check-circle success-icon"></i>
+    
+      <div class="error"></div>
+    </div>
+
+    <div>
+      <label for="amount">Amount to send</label>
+      <i class="fa-solid fa-circle-dollar-to-slot"></i>
+
+      <input 
+        id="amount" 
+        type="number"
+        name="amount"
+        placeholder="Enter amount to send" 
+      />
+
+      <i class="fas fa-exclamation-circle failure-icon"></i>
+      <i class="far fa-check-circle success-icon"></i>
+    
+      <div class="error"></div>
+    </div>
+
+    <div>
+      <label for="otp">OTP Authentication</label>
+      <i class="fa-solid fa-lock"></i>
+
+      <input 
+        type="number" 
+        name="otp"
+        id="otp" 
+        placeholder="Enter OTP" 
+      />
+
+      <i class="fas fa-exclamation-circle failure-icon"></i>
+      <i class="far fa-check-circle success-icon"></i>
+    
+      <div class="error"></div>
+    </div>
+
+    <button id="btn" type="submit">SEND TOKENS</button>
   </form>
+</div>
   <script src="script.js"></script>
 </body>
 
